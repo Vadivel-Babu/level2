@@ -4,22 +4,38 @@ import { Modal } from "antd";
 const Summary = ({ isOpen, data, onClose }) => {
   return (
     <Modal title="Summary" open={isOpen} onCancel={onClose}>
-      <p>Name: {data.Name}</p>
-      <p>Email: {data.Email}</p>
-      <p>mobile: {data.Number}</p>
-      <p>Position: {data.position}</p>
-      <p>Experience: {data.experience}</p>
+      <p>
+        Name: <span className="font-bold">{data.Name}</span>{" "}
+      </p>
+      <p>
+        Email: <span className="font-bold">{data.Email}</span>{" "}
+      </p>
+      <p>
+        mobile: <span className="font-bold">{data.Number}</span>{" "}
+      </p>
+      <p>
+        Position: <span className="font-bold">{data.position}</span>{" "}
+      </p>
+      <p>
+        Experience: <span className="font-bold">{data.experience}</span>{" "}
+      </p>
       {data.position === "Designer" ? (
         <div className="flex gap-2">
           <p>Portfolio link:</p>
-          <a href={data.URL} target="blank">
+          <a href={data.URL} className="font-bold" target="blank">
             click here
           </a>
         </div>
       ) : (
         ""
       )}
-      {data.Explanation ? <p>Explanation: {data.Explanation}</p> : ""}
+      {data.Explanation ? (
+        <p>
+          Explanation: <span className="font-bold">{data.Explanation}</span>{" "}
+        </p>
+      ) : (
+        ""
+      )}
 
       {data.skills && (
         <ul>
@@ -33,8 +49,12 @@ const Summary = ({ isOpen, data, onClose }) => {
       )}
       {data.date && (
         <div>
-          <p>Date: {data.date.split(" ")[0]}</p>
-          <p>Time: {data.date.split(" ")[1]}</p>
+          <p>
+            Date: <span className="font-bold">{data.date.split(" ")[0]}</span>{" "}
+          </p>
+          <p>
+            Time: <span className="font-bold">{data.date.split(" ")[1]}</span>{" "}
+          </p>
         </div>
       )}
     </Modal>
