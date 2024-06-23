@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { Button, Input, InputNumber, Select, DatePicker, Checkbox } from "antd";
 import useForm from "../hook/useForm";
-import Summary from "../../../level1/src/components/Summary";
+import Summary from "./Summary";
 
 const Form = () => {
   const { TextArea } = Input;
